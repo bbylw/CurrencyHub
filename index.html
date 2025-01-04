@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>汇率转换器</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       * {
@@ -50,6 +54,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        position: relative;
       }
 
       label {
@@ -75,12 +80,17 @@
 
       select {
         padding: 10px;
+        padding-right: 30px;
         border: 2px solid #333;
         background: #2a2a2a;
         color: #fff;
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        width: 100%;
+        max-width: 200px;
       }
 
       select:focus {
@@ -215,23 +225,100 @@
         border-color: #ff9000;
       }
 
+      .select-wrapper {
+        position: relative;
+        flex: 1;
+      }
+
+      .select-wrapper::after {
+        content: "▼";
+        font-size: 12px;
+        color: #ff9000;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      .swap-btn {
+        background: #2a2a2a;
+        border: 2px solid #333;
+        color: #ff9000;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 20px;
+        padding: 0;
+        margin: 0 10px;
+      }
+
+      .swap-btn:hover {
+        background: #333;
+        transform: rotate(180deg);
+      }
+
       @media (max-width: 480px) {
         .container {
-          padding: 1.5rem;
+          padding: 1rem;
         }
 
         .input-group {
           flex-direction: column;
-          align-items: flex-start;
+          align-items: stretch;
+          gap: 8px;
         }
 
-        input[type="number"],
-        select {
+        .currency-controls {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .select-wrapper {
+          flex: 1;
+        }
+
+        select,
+        input[type="number"] {
+          max-width: none;
           width: 100%;
+        }
+
+        .swap-btn {
+          margin: 0;
+          transform: rotate(90deg);
+        }
+
+        .swap-btn:hover {
+          transform: rotate(270deg);
+        }
+
+        .time-range {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .time-btn {
+          flex: 1;
+          min-width: 80px;
+          text-align: center;
         }
 
         .chart-container {
           padding: 10px;
+          margin-top: 20px;
+          height: 250px;
+        }
+
+        .chart-header {
+          flex-direction: column;
+          gap: 10px;
         }
       }
     </style>
@@ -245,30 +332,60 @@
         <input type="number" id="amount" value="1" min="0" step="0.01" />
       </div>
 
-      <div class="input-group">
-        <label for="from">从:</label>
-        <select id="from">
-          <option value="USD">美元 (USD)</option>
-          <option value="EUR">欧元 (EUR)</option>
-          <option value="CNY">人民币 (CNY)</option>
-          <option value="JPY">日元 (JPY)</option>
-          <option value="GBP">英镑 (GBP)</option>
-          <option value="AUD">澳元 (AUD)</option>
-          <option value="CAD">加元 (CAD)</option>
-        </select>
-      </div>
+      <div class="currency-controls">
+        <div class="input-group">
+          <label for="from">从:</label>
+          <div class="select-wrapper">
+            <select id="from">
+              <option value="USD">美元 (USD)</option>
+              <option value="EUR">欧元 (EUR)</option>
+              <option value="CNY">人民币 (CNY)</option>
+              <option value="JPY">日元 (JPY)</option>
+              <option value="GBP">英镑 (GBP)</option>
+              <option value="AUD">澳元 (AUD)</option>
+              <option value="CAD">加元 (CAD)</option>
+              <option value="CHF">瑞士法郎 (CHF)</option>
+              <option value="HKD">港币 (HKD)</option>
+              <option value="NZD">新西兰元 (NZD)</option>
+              <option value="SEK">瑞典克朗 (SEK)</option>
+              <option value="KRW">韩元 (KRW)</option>
+              <option value="SGD">新加坡元 (SGD)</option>
+              <option value="NOK">挪威克朗 (NOK)</option>
+              <option value="MXN">墨西哥比索 (MXN)</option>
+              <option value="INR">印度卢比 (INR)</option>
+              <option value="RUB">俄罗斯卢布 (RUB)</option>
+              <option value="ZAR">南非兰特 (ZAR)</option>
+            </select>
+          </div>
+        </div>
 
-      <div class="input-group">
-        <label for="to">至:</label>
-        <select id="to">
-          <option value="CNY">人民币 (CNY)</option>
-          <option value="USD">美元 (USD)</option>
-          <option value="EUR">欧元 (EUR)</option>
-          <option value="JPY">日元 (JPY)</option>
-          <option value="GBP">英镑 (GBP)</option>
-          <option value="AUD">澳元 (AUD)</option>
-          <option value="CAD">加元 (CAD)</option>
-        </select>
+        <button class="swap-btn" id="swapBtn">⇄</button>
+
+        <div class="input-group">
+          <label for="to">至:</label>
+          <div class="select-wrapper">
+            <select id="to">
+              <option value="CNY">人民币 (CNY)</option>
+              <option value="USD">美元 (USD)</option>
+              <option value="EUR">欧元 (EUR)</option>
+              <option value="JPY">日元 (JPY)</option>
+              <option value="GBP">英镑 (GBP)</option>
+              <option value="AUD">澳元 (AUD)</option>
+              <option value="CAD">加元 (CAD)</option>
+              <option value="CHF">瑞士法郎 (CHF)</option>
+              <option value="HKD">港币 (HKD)</option>
+              <option value="NZD">新西兰元 (NZD)</option>
+              <option value="SEK">瑞典克朗 (SEK)</option>
+              <option value="KRW">韩元 (KRW)</option>
+              <option value="SGD">新加坡元 (SGD)</option>
+              <option value="NOK">挪威克朗 (NOK)</option>
+              <option value="MXN">墨西哥比索 (MXN)</option>
+              <option value="INR">印度卢比 (INR)</option>
+              <option value="RUB">俄罗斯卢布 (RUB)</option>
+              <option value="ZAR">南非兰特 (ZAR)</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <button id="convert">立即转换</button>
@@ -577,6 +694,29 @@
           }
         }, 250)
       );
+
+      // 添加货币切换功能
+      const swapBtn = document.getElementById("swapBtn");
+      swapBtn.addEventListener("click", () => {
+        const fromValue = fromSelect.value;
+        const toValue = toSelect.value;
+
+        fromSelect.value = toValue;
+        toSelect.value = fromValue;
+
+        if (
+          resultDiv.textContent &&
+          resultDiv.textContent !== "转换中..." &&
+          resultDiv.textContent !== "请求出错，请稍后再试"
+        ) {
+          convertButton.click();
+        }
+      });
+
+      // 优化移动端触摸体验
+      document.addEventListener("touchstart", function () {}, {
+        passive: true,
+      });
     </script>
   </body>
 </html>

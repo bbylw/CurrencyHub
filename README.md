@@ -1,7 +1,5 @@
 # CurrencyHub - 高性能汇率转换器 | High Performance Currency Converter
 
-![](https://cdn.jsdelivr.net/gh/pusvsimg/img@main/Image/20250104212708782.png)
-
 [English](#english) | [中文](#中文)
 
 # 中文
@@ -11,10 +9,31 @@
 ## 🚀 主要特点
 
 - 实时汇率转换
-- 支持7种主要货币
+- 支持18种主要货币
 - 高性能历史数据图表
 - 完全响应式设计
 - 无需后端，纯静态部署
+
+## 💱 支持货币
+
+- 美元 (USD)
+- 欧元 (EUR)
+- 人民币 (CNY)
+- 日元 (JPY)
+- 英镑 (GBP)
+- 澳元 (AUD)
+- 加元 (CAD)
+- 瑞士法郎 (CHF)
+- 港币 (HKD)
+- 新西兰元 (NZD)
+- 瑞典克朗 (SEK)
+- 韩元 (KRW)
+- 新加坡元 (SGD)
+- 挪威克朗 (NOK)
+- 墨西哥比索 (MXN)
+- 印度卢比 (INR)
+- 俄罗斯卢布 (RUB)
+- 南非兰特 (ZAR)
 
 ## 📊 图表功能
 
@@ -23,6 +42,7 @@
 - 平滑动画效果
 - 自适应数据显示
 - 触摸设备友好
+- 加载状态反馈
 
 ## 💡 性能优化
 
@@ -31,6 +51,16 @@
 - 图表重绘优化
 - 加载状态反馈
 - 内存使用优化
+- 移动端性能优化
+
+## 📱 移动端优化
+
+- 优化触摸体验
+- 自适应布局设计
+- 货币快速切换按钮
+- 优化选择器样式
+- 紧凑型图表显示
+- 适配各种屏幕尺寸
 
 ## 🎨 设计特点
 
@@ -39,8 +69,9 @@
 - 响应式设计，适配各种设备
 - 流畅的动画效果
 - 直观的用户界面
+- 自定义下拉样式
 
-## 🚀 数据来源
+## 📡 数据来源
 
 本项目使用 [Frankfurter API](https://www.frankfurter.app/) 提供汇率数据：
 
@@ -71,13 +102,14 @@ API端点：
 - Frankfurter API
 - CSS3 动画
 - HTML5
+- 响应式设计
 
 ## 📱 设备支持
 
 - 桌面端（Windows/Mac/Linux）
 - 平板设备
 - 移动设备
-- 支持触摸屏操作
+- 触摸屏优化
 
 ## ⚠️ 免责声明
 
@@ -96,10 +128,31 @@ This is a high-performance currency conversion tool. The website adopts the blac
 ## 🔒 Key Features
 
 - Real-time currency conversion
-- Support for 7 major currencies
+- Support for 18 major currencies
 - High-performance historical data charts
 - Fully responsive design
 - No backend required, pure static deployment
+
+## 💱 Supported Currencies
+
+- US Dollar (USD)
+- Euro (EUR)
+- Chinese Yuan (CNY)
+- Japanese Yen (JPY)
+- British Pound (GBP)
+- Australian Dollar (AUD)
+- Canadian Dollar (CAD)
+- Swiss Franc (CHF)
+- Hong Kong Dollar (HKD)
+- New Zealand Dollar (NZD)
+- Swedish Krona (SEK)
+- South Korean Won (KRW)
+- Singapore Dollar (SGD)
+- Norwegian Krone (NOK)
+- Mexican Peso (MXN)
+- Indian Rupee (INR)
+- Russian Ruble (RUB)
+- South African Rand (ZAR)
 
 ## 📊 Chart Features
 
@@ -108,6 +161,7 @@ This is a high-performance currency conversion tool. The website adopts the blac
 - Smooth animation effects
 - Adaptive data display
 - Touch device friendly
+- Loading state feedback
 
 ## 💡 Performance Optimizations
 
@@ -116,6 +170,16 @@ This is a high-performance currency conversion tool. The website adopts the blac
 - Chart redraw optimization
 - Loading state feedback
 - Memory usage optimization
+- Mobile performance optimization
+
+## 📱 Mobile Optimizations
+
+- Enhanced touch experience
+- Adaptive layout design
+- Quick currency swap button
+- Optimized selector styles
+- Compact chart display
+- Multiple screen size support
 
 ## 🎨 Design Features
 
@@ -124,8 +188,9 @@ This is a high-performance currency conversion tool. The website adopts the blac
 - Responsive design for all devices
 - Smooth animations
 - Intuitive user interface
+- Custom dropdown styles
 
-## 🚀 数据来源
+## 📡 Data Source
 
 This project uses [Frankfurter API](https://www.frankfurter.app/) for exchange rate data:
 
@@ -156,13 +221,14 @@ Both platforms provide free hosting services with simple deployment processes.
 - Frankfurter API
 - CSS3 animations
 - HTML5
+- Responsive design
 
 ## 📱 Device Support
 
 - Desktop (Windows/Mac/Linux)
 - Tablets
 - Mobile devices
-- Touch screen support
+- Touch screen optimized
 
 ## ⚠️ Disclaimer
 
