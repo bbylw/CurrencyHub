@@ -1,5 +1,7 @@
 # CurrencyHub - 高性能汇率转换器 | High Performance Currency Converter
 
+![](https://cdn.jsdelivr.net/gh/pusvsimg/img@main/Image/20250104212708782.png)
+
 [English](#english) | [中文](#中文)
 
 # 中文
