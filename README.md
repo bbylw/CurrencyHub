@@ -38,6 +38,21 @@
 - 流畅的动画效果
 - 直观的用户界面
 
+## 🚀 数据来源
+
+本项目使用 [Frankfurter API](https://www.frankfurter.app/) 提供汇率数据：
+
+- 免费开源的汇率API
+- 基于欧洲中央银行的官方数据
+- 支持历史汇率查询
+- 每工作日更新汇率
+- 无需API密钥
+- 支持CORS跨域请求
+
+API端点：
+- 实时汇率：`https://api.frankfurter.app/latest`
+- 历史数据：`https://api.frankfurter.app/2024-01-01..2024-02-01`
+
 ## 🚀 部署说明
 
 本项目是一个纯静态网站，可以轻松部署在：
@@ -64,7 +79,7 @@
 
 ## ⚠️ 免责声明
 
-本项目仅用于教育和演示目的。汇率数据来自第三方API，不保证完全准确性。
+本项目仅用于教育和演示目的。汇率数据来自 Frankfurter API，基于欧洲中央银行的官方数据，但不保证完全实时性和准确性。
 
 ## 📝 许可证
 
@@ -108,6 +123,21 @@ This is a high-performance currency conversion tool. The website adopts the blac
 - Smooth animations
 - Intuitive user interface
 
+## 🚀 数据来源
+
+This project uses [Frankfurter API](https://www.frankfurter.app/) for exchange rate data:
+
+- Free and open-source exchange rate API
+- Based on official European Central Bank data
+- Historical exchange rates support
+- Daily updates on working days
+- No API key required
+- CORS support
+
+API Endpoints:
+- Latest rates: `https://api.frankfurter.app/latest`
+- Historical data: `https://api.frankfurter.app/2024-01-01..2024-02-01`
+
 ## 🚀 Deployment
 
 This project is a pure static website that can be easily deployed on:
@@ -134,7 +164,7 @@ Both platforms provide free hosting services with simple deployment processes.
 
 ## ⚠️ Disclaimer
 
-This project is for educational and demonstration purposes only. Exchange rate data comes from third-party APIs and absolute accuracy is not guaranteed.
+This project is for educational and demonstration purposes only. Exchange rate data comes from Frankfurter API, based on European Central Bank official data, but real-time accuracy is not guaranteed.
 
 ## 📝 License
 
